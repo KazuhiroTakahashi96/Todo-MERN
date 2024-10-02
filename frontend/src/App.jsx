@@ -3,6 +3,7 @@ import Button from "./components/common/Button";
 import Input from "./components/common/Input";
 
 function App() {
+  const [input, setInput] = useState("");
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -21,12 +22,26 @@ function App() {
     },
   ]);
 
+  const handleClick = () => {
+    console.log("clicked");
+    setTodos((prev) => [
+      ...prev,
+      {
+        id: prev.length + 1,
+        text: input,
+        isCompleted: false,
+      },
+    ]);
+
+    setInput("");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <div className="flex items-center justify-center gap-4">
-        <Input />
-        <Button />
+        <Input input={input} setInput={setInput} />
+        <Button text={"追加"} onClick={handleClick} />
       </div>
       <div className="mt-20">
         {todos.map((todo) => (

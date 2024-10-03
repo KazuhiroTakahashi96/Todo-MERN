@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./components/common/Button";
 import Input from "./components/common/Input";
+import Table from "./components/todo/Table";
 
 function App() {
   const [input, setInput] = useState("");
@@ -37,18 +38,13 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="h-screen w-screen flex flex-col items-center justify-center py-10 px-20">
       <div className="flex items-center justify-center gap-4">
         <Input input={input} setInput={setInput} />
         <Button text={"追加"} onClick={handleClick} />
       </div>
-      <div className="mt-20">
-        {todos.map((todo) => (
-          <p key={todo.id} className="mb-5">
-            {todo.text}
-          </p>
-        ))}
+      <div className="h-full w-full mt-14 px-10 overflow-auto">
+        <Table todos={todos} />
       </div>
     </div>
   );

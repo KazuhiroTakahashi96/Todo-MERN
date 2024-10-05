@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/common/Button";
 import Input from "./components/common/Input";
 import Table from "./components/todo/Table";
+import Badge from "./components/common/Badge";
 
 function App() {
   const [input, setInput] = useState("");
@@ -9,7 +10,7 @@ function App() {
     {
       id: 1,
       text: "勉強",
-      isCompleted: false,
+      isCompleted: true,
     },
     {
       id: 2,

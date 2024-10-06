@@ -8,8 +8,14 @@ const Row = ({ text, isCompleted }) => {
   const handleEdit = () => setIsEdit(true);
 
   const handleUpdate = () => setIsEdit(false);
+
+  const handleDelete = () => {
+    console.log("delete todo");
+    setIsEdit(false);
+  };
+
   return (
-    <tr>
+    <tr className="text-base">
       <td>{text}</td>
       <td>
         <Badge
@@ -19,7 +25,10 @@ const Row = ({ text, isCompleted }) => {
       </td>
       <td>
         {isEdit ? (
-          <Button text={"更新"} onClick={handleUpdate} />
+          <div className="flex gap-5">
+            <Button text={"更新"} onClick={handleUpdate} />
+            <Button text={"削除"} onClick={handleDelete} />
+          </div>
         ) : (
           <Button text={"編集"} onClick={handleEdit} />
         )}

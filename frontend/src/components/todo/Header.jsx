@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <tr>
+    <tr className="text-lg text-gray-300">
       <th>やること</th>
       <th>状態</th>
       <th></th>

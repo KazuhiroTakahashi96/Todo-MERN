@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "./components/common/Button";
 import Input from "./components/common/Input";
 import Table from "./components/todo/Table";
-import Badge from "./components/common/Badge";
 
 function App() {
   const [input, setInput] = useState("");
@@ -24,8 +23,8 @@ function App() {
     },
   ]);
 
-  const handleClick = () => {
-    console.log("clicked");
+  const handleAddTodo = () => {
+    if (!input) return;
     setTodos((prev) => [
       ...prev,
       {
@@ -42,7 +41,7 @@ function App() {
     <div className="h-screen w-screen flex flex-col items-center justify-center py-10 px-20">
       <div className="flex items-center justify-center gap-4">
         <Input input={input} setInput={setInput} />
-        <Button text={"追加"} onClick={handleClick} />
+        <Button text={"追加"} onClick={handleAddTodo} />
       </div>
       <div className="h-full w-full mt-14 px-10 overflow-auto">
         <Table todos={todos} />

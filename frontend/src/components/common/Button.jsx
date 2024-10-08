@@ -1,4 +1,4 @@
-const Button = ({ text, onClick, styleType }) => {
+const Button = ({ label, onClick, styleType }) => {
   switch (styleType) {
     case "secondary":
       return (
@@ -6,7 +6,7 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-secondary  text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
 
@@ -16,7 +16,7 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-accent text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
 
@@ -26,7 +26,7 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-ghost text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
 
@@ -36,14 +36,14 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-link text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
 
     case "warning":
       return (
         <button onClick={onClick} className="btn btn-warning font-medium">
-          {text}
+          {label}
         </button>
       );
 
@@ -53,7 +53,7 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-error text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
 
@@ -63,7 +63,7 @@ const Button = ({ text, onClick, styleType }) => {
           onClick={onClick}
           className="btn btn-primary text-white font-medium"
         >
-          {text}
+          {label}
         </button>
       );
   }

@@ -1,10 +1,10 @@
-const Badge = ({ text, boolean }) => {
+const Badge = ({ label, boolean }) => {
   return (
     <>
       {boolean ? (
-        <div className="badge badge-accent text-base">{text}</div>
+        <div className="badge badge-accent text-base">{label}</div>
       ) : (
-        <div className="badge badge-neutral text-base">{text}</div>
+        <div className="badge badge-neutral text-base">{label}</div>
       )}
     </>
   );

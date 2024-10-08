@@ -10,11 +10,7 @@ const Table = ({ todos }) => {
         </thead>
         <tbody>
           {todos.map((todo) => (
-            <Row
-              key={todo.id}
-              text={todo.text}
-              isCompleted={todo.isCompleted}
-            />
+            <Row key={todo.id} todo={todo} />
           ))}
         </tbody>
       </table>

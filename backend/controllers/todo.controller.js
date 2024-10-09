@@ -53,7 +53,7 @@ export const updateTodo = async (req, res) => {
       },
       { new: true }
     );
-    console.log(updatedTodo);
+
     res.status(200).json({ success: true, data: updatedTodo });
   } catch (error) {
     console.error("Error in the updating process: ", error.message);

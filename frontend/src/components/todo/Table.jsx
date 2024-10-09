@@ -1,7 +1,22 @@
+import { useEffect } from "react";
 import Header from "./Header";
 import Row from "./Row";
+import { useTodoStore } from "../../store/todo";
 
-const Table = ({ todos }) => {
+const Table = () => {
+  const { todos, getTodos } = useTodoStore();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await getTodos();
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    fetchData();
+  }, [getTodos]);
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -10,7 +25,7 @@ const Table = ({ todos }) => {
         </thead>
         <tbody>
           {todos.map((todo) => (
-            <Row key={todo.id} todo={todo} />
+            <Row key={todo._id} todo={todo} />
           ))}
         </tbody>
       </table>
